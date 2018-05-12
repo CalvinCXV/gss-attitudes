@@ -25,6 +25,24 @@ source("Import_GSS2016_haven.R")
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+```{r}
+xmarsexandsex <- xtabs(~SEX+XMARSEX,data=shortDat)
+xmarsexandsex
+```
+  
+thanks to the table above, we can see that thhere are about 200 more females than males and even so, more males voted hmm an ok than females did
+```{r}
+barchartGC(xmarsexandsex,type="percent")
+```
+  
+At first glance, both barcharts look identical and upon further glance, they are both very similar. As expected the large majority of subjects in both groups said extra marrige sex is wrong but there is a slight difference in that a fewer percent of males than females said it was wrong.
+
+```{r}
+t.test(xmarsexandsex)
+```
+  
+The p-value is 0.12 which is higher than 0.05. this means that there is some relation and not just at random.
+
 # Polyviews
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
