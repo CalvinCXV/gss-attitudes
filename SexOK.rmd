@@ -29,7 +29,24 @@ source("Import_GSS2016_haven.R")
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-# Relationship Status
+```{r}
+polyxmar <- xtabs(~POLVIEWS+XMARSEX,data=shortDat)
+polyxmar
+```
+
+```{r}
+barchartGC(polyxmar,type="percent")
+```
+
+At first glance, the barcharts look to be expected. the majority say extra marrigal sex is wrong and few say its ok, but upon further review, the liberal and conservative barcharts vary alot. 95% of conservatives said extra marrigal sex is wrong while only 80% of liberals said its wrong with moderate being somewhere in between. Looking at the chart above from left to right, the "wrong" bar gets bigger while the "hmm"" and "ok"" bars shrink. the relation is pretty clear and i predict a high p value to come out of the ttest.  
+
+```{r}
+t.test(polyxmar)
+```
+
+contrary to my prediction, the pvalue came out to 0.05 which is the division where statisticians consider where to reject the null hypothesis or not. according to that logic, these peoples political views have no relation to wheather they think extra marrigal sex is ok or wrong, but after looking at the numbers, i disagree. i believe there is a relation and maybe i just did something wrong with the ttest.
+
+#Relationship Status
 
 
 
