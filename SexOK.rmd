@@ -66,7 +66,18 @@ contrary to my prediction, the pvalue came out to 0.05 which is the division whe
 
 #Relationship Status
 
+```{r}
+singles <- filter(shortDat, RELATSEX=="Single")
+tblatxmars <- table(singles$XMARSEX)
+barchartGC(tblatxmars,type="percent", main="Extra marital sex single")
+```
+```{r}
+hookeds <- filter(shortDat, RELATSEX=="Hooked UP")
+tblatxmarh <- table(hookeds$XMARSEX)
+barchartGC(tblatxmarh,type="percent", main="Extra marital sex hooked up")
+```
 
+Just by looking at the barcharts above, you can see that for both relationship statuses, most would say it is wrong, but the percent of single people that said it is ok, is larger than the percent of hooked up people that said it is ok. 
 
 # Discussion and Conclusion
 
